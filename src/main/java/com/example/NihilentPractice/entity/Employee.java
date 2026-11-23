@@ -27,5 +27,8 @@ public class Employee {
 
     private String address;
 
-    private Integer departId;
+    private Long departId;
+
+    @Column(unique = true, nullable = false)
+    private String phoneNumber;
 }

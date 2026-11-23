@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
-import java.util.NoSuchElementException;
+
 import java.util.stream.Collectors;
 
 @RestControllerAdvice

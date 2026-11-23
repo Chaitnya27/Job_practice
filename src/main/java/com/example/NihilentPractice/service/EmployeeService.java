@@ -10,15 +10,16 @@ import java.util.Map;
 
 public interface EmployeeService {
 
-    EmployeeRequestDto createEmployee(EmployeeRequestDto employeeRequestDto);
 
-    boolean deleteEmployee(int empId);
+    List<EmployeeResponseDto> getAllEmployee();
 
     EmployeeResponseDto getEmployeeById(int empId);
 
-    List<EmployeeResponseDto> getAllEmployee();
+    EmployeeRequestDto createEmployee(EmployeeRequestDto employeeRequestDto);
 
     EmployeeRequestDto updateEmployee(int empId, @Valid EmployeeRequestDto employeeRequestDto);
 
     EmployeeRequestDto patchEmployee(int empId, @Valid Map<String, Object> fields);
+
+    boolean deleteEmployee(int empId);
 }

@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
@@ -60,7 +59,11 @@ public class EmployeeServiceImple  implements EmployeeService {
         //save entity to database
 
         if(employeeRepository.existsByEmail(employeeRequestDto.getEmail())){
-            throw  new RuntimeException("email already exist");
+            throw  new ResourceNotFoundException("email already exist");
+        }
+
+        if(employeeRepository.existsByPhoneNumber(employeeRequestDto.getPhoneNumber())){
+            throw  new ResourceNotFoundException("Phone Number already exist");
         }
         Employee savedEmployee = employeeRepository.save(employee);
 
@@ -79,7 +82,13 @@ public class EmployeeServiceImple  implements EmployeeService {
         Employee employee = employeeRepository.findById(empId)
                 .orElseThrow(()-> new ResourceNotFoundException("Employee not found with id " + empId));
 
+        if(employeeRepository.existsByEmail(employeeRequestDto.getEmail())){
+            throw  new ResourceNotFoundException("email already exist");
+        }
 
+        if(employeeRepository.existsByPhoneNumber(employeeRequestDto.getPhoneNumber())){
+            throw  new ResourceNotFoundException("Phone Number already exist");
+        }
 
         // Step 2: Map DTO data into existing Entity
         modelMapper.map(employeeRequestDto,employee);

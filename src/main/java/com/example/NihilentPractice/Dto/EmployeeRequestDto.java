@@ -16,8 +16,6 @@ public class EmployeeRequestDto {
 
     @NotBlank(message = "Can't be blank")
     @Email(message = "Invalid email format")
-
-
     private String email;
 
     @Positive(message = "Salary Must be positive")
@@ -35,5 +33,13 @@ public class EmployeeRequestDto {
     @Positive(message = "Age Must be positive")
     @Min(value = 20,message = "Must be greater than 20")
     private int age;
+
+    @NotBlank(message = "Phone number is required")
+    @Pattern(
+            regexp = "^[0-9]{10}$",
+            message = "Phone number must contain exactly 10 digits"
+    )
+    private String phoneNumber;
+
 
 }

@@ -7,8 +7,6 @@ import lombok.Setter;
 @Setter
 public class EmployeeResponseDto {
 
-
-
         private Integer empId;
         private String name;
         private String email;
@@ -16,5 +14,6 @@ public class EmployeeResponseDto {
         private String address;
         private Integer departId;
         private int age;
+        private String phoneNumber;
     }
 
