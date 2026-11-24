@@ -27,7 +27,9 @@ public class Employee {
 
     private String address;
 
-    private Long departId;
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     @Column(unique = true, nullable = false)
     private String phoneNumber;

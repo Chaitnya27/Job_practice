@@ -12,7 +12,7 @@ public class EmployeeResponseDto {
         private String email;
         private double salary;
         private String address;
-        private Integer departId;
+        private Long departId;
         private int age;
         private String phoneNumber;
     }

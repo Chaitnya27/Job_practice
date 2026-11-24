@@ -22,4 +22,6 @@ public interface EmployeeService {
     EmployeeRequestDto patchEmployee(int empId, @Valid Map<String, Object> fields);
 
     boolean deleteEmployee(int empId);
+
+    List<EmployeeResponseDto> getEmployeeByDepartmentId(Long departId);
 }

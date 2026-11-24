@@ -28,7 +28,7 @@ public class EmployeeRequestDto {
 
     @NotNull(message = "Cant be null")
     @Positive(message = "Department ID must be positive")
-    private Integer departId;
+    private Long departId;
 
     @Positive(message = "Age Must be positive")
     @Min(value = 20,message = "Must be greater than 20")
